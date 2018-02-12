@@ -1,0 +1,21 @@
+<section id="projects">
+    <div class="container">
+      <h3>{{ .Site.Data.talks.name }}</h3>
+      <div class="panel panel-default">
+        <div class="panel-body">
+        {{ range $i, $el := .Site.Data.talks.source }}
+          <div class="panel-body">
+          <h5>
+            <i class="{{ .icon }}"></i>&nbsp;&nbsp;
+            <strong><a href="#">{{ $el.confname }}</a></strong>&nbsp;-&nbsp;{{ $el.description }}
+          </h5>
+          {{ if $el.yturl }}
+          <iframe width="560" height="315" src="{{ $el.yturl }}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+          {{ end }}
+          </div>
+        {{ end }}
+        </div>
+      </div>
+    </div>
+  </section>
+  
